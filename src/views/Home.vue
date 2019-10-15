@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <v-container bg fill-height grid-list-md text-xs-center>
+    <v-layout row wrap align-center>
+      <v-flex class="inner">
+        <v-row align="center" justify="center">
+          <v-btn class="ma-2" tile outlined color="black" @click="navigate">Navigate</v-btn>
+        </v-row>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+@Component({})
+export default class Home extends Vue {
+  public navigate() {
+    this.$router.push({ name: 'main' });
+  }
+}
 </script>
